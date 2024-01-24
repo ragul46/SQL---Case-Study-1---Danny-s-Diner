@@ -54,9 +54,11 @@ VALUES
   ('B', '2021-01-09');
 
 -- 1)What is the total amount each customer spent at the restaurant?
+```sql
 Select s.customer_id,sum(m.price) as total_price from
 sales s join menu m on s.product_id = m.product_id
-group by s.customer_id;
+group by s.customer_id
+```
 
 -- 2)How many days has each customer visited the restaurant?
 Select customer_id, count(distinct order_date) as No_of_visits
